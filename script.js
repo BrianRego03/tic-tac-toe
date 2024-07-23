@@ -38,7 +38,7 @@ function startGame(){
         let yposition;
         if(playerx.start==1)
         {
-            xposition=prompt("where should X play?(0-8)");
+            xposition=prompt(`where should ${playerx.name} play?(0-8)`);
             gameBoard.marks[xposition]=playerx.signal;
             playerx.start--;
             playery.start++;
@@ -48,7 +48,7 @@ function startGame(){
                 break;
         }
         else{
-            yposition=prompt("where should y play?(0-8)");
+            yposition=prompt(`where should ${playery.name} play?(0-8)`);
             gameBoard.marks[yposition]=playery.signal;
             playery.start--;
             playerx.start++;
@@ -61,7 +61,7 @@ function startGame(){
         count++;
         
     }
-    console.log(gameBoard);
+    // console.log(gameBoard);
     if(winner==0)
         console.log("It's a tie");
     else if(winner=="X")
@@ -87,7 +87,7 @@ function boardChecker(){
         {
             console.log(`we have a winner ${gameBoard.marks[splitArray[0]]} at
                  ${splitArray[0]}${splitArray[1]}${splitArray[2]}`);
-            console.log(gameBoard.marks[splitArray[0]]);     
+            // console.log(gameBoard.marks[splitArray[0]]);     
             return gameBoard.marks[splitArray[0]];      
         }
         
