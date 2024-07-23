@@ -3,9 +3,9 @@ let gameBoard ={
 };
 
 function player(name,signal){
-    let start=0;
-    let score=0;
-
-    return{name,signal,start,score};
+        return{name,signal,start:0,score:0};
 }
+
+player1=player();
+player2=player();
 
