@@ -27,4 +27,32 @@ function beginDecider() {
             console.log(`${playery.name} goes first`);
         }
 }   
-beginDecider();                          
+beginDecider();     
+
+function startGame(){
+    let count=0;
+    while(count<9)
+    {
+        let xposition;
+        let yposition;
+        if(playerx.start==1)
+        {
+            xposition=prompt("where should X play?(0-8)");
+            gameBoard.marks[xposition]=playerx.signal;
+            playerx.start--;
+            playery.start++;
+        }
+        else{
+            yposition=prompt("where should y play?(0-8)");
+            gameBoard.marks[yposition]=playery.signal;
+            playery.start--;
+            playerx.start++;
+
+        }
+        count++;
+        
+    }
+    console.log(gameBoard);
+}
+
+startGame();
