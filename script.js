@@ -110,10 +110,12 @@ formSubmit.addEventListener('submit',function(e){
     playery.name=formSubmit[3].value;
 
     clearStart();
-    initializeDisplay();
+    
     wait=1;
     if(wait=1)
         dialogButton.close();
+
+    
 
 })
 
@@ -156,17 +158,20 @@ let formButtonActivate=(function(){
 let clearStart=()=>{
     const startSection=document.getElementById("start");
     startSection.remove();
+    initializeDisplay();
 };
 
 let displayScreen=document.getElementById("displayInfo");
+let titleDiv=document.getElementById("title");
 let initializeDisplay=()=>{
     let displayDiv=document.createElement("div");
-    document.body.appendChild(displayDiv).setAttribute("id","displayInfo");
+    titleDiv.insertAdjacentElement('afterend',displayDiv);
+    displayDiv.setAttribute("id","displayInfo");
     if(playerx.start>0){
-    displayScreen.innerText=`${playerx.name} starts first`;
+        displayDiv.innerText=`${playerx.name} starts first`;
     }
     else{
-        displayScreen.innerText=`${playery.name} starts first`;
+        displayDiv.innerText=`${playery.name} starts first`;
 
     }
     
