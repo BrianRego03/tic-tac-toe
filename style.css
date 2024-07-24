@@ -69,6 +69,12 @@
     align-items: center;
     font-size: 50px;
 }
+
+#formAlign{
+  
+  justify-self: center;
+  align-self: center;
+}
 form{
     display: flex;
     flex-direction: column;
