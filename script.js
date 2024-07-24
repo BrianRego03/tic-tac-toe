@@ -107,9 +107,9 @@ formSubmit.addEventListener('submit',function(e){
     e.preventDefault();
     let wait=0;
     playerx.name=formSubmit[0].value;
-    playery.name=formSubmit[1].value;
+    playery.name=formSubmit[3].value;
 
-    startSection();
+    clearStart();
     wait=1;
     if(wait=1)
         dialogButton.close();
