@@ -127,3 +127,15 @@ form{
   background-color: rgb(221, 221, 221);
   color: rgb(78, 78, 78);
 }
+
+#displayInfo{
+  background-color: #89CC04;
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  
+  font-size: 34px;
+
+}
