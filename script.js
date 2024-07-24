@@ -29,47 +29,47 @@ function beginDecider() {
 }   
 beginDecider();     
 
+let count=0;
 function startGame(gridPosition){
-    let count=0;
+    
     let winner=0;
-    while(count<9)
+    console.log(gridPosition);
+    
+    if(playerx.start==1)
     {
-        let xposition;
-        let yposition;
-        if(playerx.start==1)
-        {
-            xposition=prompt(`where should ${playerx.name} play?(0-8)`);
-            gameBoard.marks[xposition]=playerx.signal;
-            playerx.start--;
-            playery.start++;
-            winner=boardChecker();
-            console.log(winner);
-            if(winner=='X')
-                break;
-        }
-        else{
-            yposition=prompt(`where should ${playery.name} play?(0-8)`);
-            gameBoard.marks[yposition]=playery.signal;
-            playery.start--;
-            playerx.start++;
-            winner=boardChecker();
-            console.log(winner);
-            if(winner=='O')
-                break;
-
-        }
-        count++;
+        
+        gameBoard.marks[gridPosition]=playerx.signal;
+        playerx.start--;
+        playery.start++;
+        winner=boardChecker();
+        console.log(winner);
         
     }
+    else{
+        
+        gameBoard.marks[gridPosition]=playery.signal;
+        playery.start--;
+        playerx.start++;
+        winner=boardChecker();
+        console.log(winner);
+        
+
+    }
+    count++;
+        
+    
     // console.log(gameBoard);
-    if(winner==0)
-        console.log("It's a tie");
+    if((count==9)&&(winner==0))
+        {console.log("It's a tie");
+            return;}
     else if(winner=="X")
-        console.log(`${playerx.name} wins`);
+        {console.log(`${playerx.name} wins`);
+         return;}
     else if(winner=='O')
-        console.log(`${playery.name} wins`);
+        {console.log(`${playery.name} wins`);
+            return;}
     else
-        console.log('error');    
+        return;  
 }
 
 // startGame();
@@ -183,7 +183,7 @@ let gridButtons=document.querySelectorAll(".gridChildren");
 
 for(let currentButton of gridButtons){
     currentButton.addEventListener('click',()=>{
-        let location=currentButton.id.slice(3);
+        let location=currentButton.id.slice(4);
         if(playerx.start>0){
             currentButton.innerText=playerx.signal;
             currentButton.classList.add("xButtonHighlight");
