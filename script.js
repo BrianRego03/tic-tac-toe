@@ -60,16 +60,19 @@ function startGame(gridPosition){
         {
             console.log("It's a tie");
             disableGrid();
+            displayWinner(`It's a tie`);
             return;}
     else if(winner=="X")
         {
             console.log(`${playerx.name} wins`);
             disableGrid();
+            displayWinner(`${playerx.name} wins`);
             return;}
     else if(winner=='O')
         {
             console.log(`${playery.name} wins`);
             disableGrid();
+            displayWinner(`${playery.name} wins`);
             return;}
     else
         return;  
@@ -164,7 +167,6 @@ let clearStart=()=>{
     initializeDisplay();
 };
 
-let displayScreen=document.getElementById("displayInfo");
 let titleDiv=document.getElementById("title");
 let initializeDisplay=()=>{
     let displayDiv=document.createElement("div");
@@ -210,3 +212,8 @@ let disableGrid=()=>{
     }
 };
 
+let displayWinner=(thread)=>{
+
+    let displayScreen=document.getElementById("displayInfo");
+    displayScreen.innerText=thread;
+    }
