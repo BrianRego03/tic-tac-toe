@@ -166,6 +166,7 @@ let clearStart=()=>{
     startSection.remove();
     initializeDisplay();
     gridGenerate();
+    gridActivator();
 };
 
 let titleDiv=document.getElementById("title");
@@ -185,29 +186,33 @@ let initializeDisplay=()=>{
 }
 
 
-let gridButtons=document.querySelectorAll(".gridChildren");
 
-for(let currentButton of gridButtons){
-    currentButton.addEventListener('click',()=>{
-        let location=currentButton.id.slice(4);
-        if(playerx.start>0){
-            currentButton.innerText=playerx.signal;
-            currentButton.classList.add("xButtonHighlight");
-            
-            startGame(location);
-        }
-        else{
-            currentButton.innerText=playery.signal;
-            currentButton.classList.add("yButtonHighlight");
-            
-            startGame(location);
 
-        }
-        currentButton.disabled=true;
-    })
+let gridActivator=()=>{
+    let gridButtons=document.querySelectorAll(".gridChildren");
+    for(let currentButton of gridButtons){
+        currentButton.addEventListener('click',()=>{
+            let location=currentButton.id.slice(4);
+            if(playerx.start>0){
+                currentButton.innerText=playerx.signal;
+                currentButton.classList.add("xButtonHighlight");
+                
+                startGame(location);
+            }
+            else{
+                currentButton.innerText=playery.signal;
+                currentButton.classList.add("yButtonHighlight");
+                
+                startGame(location);
+    
+            }
+            currentButton.disabled=true;
+        })
+    }
 }
 
 let disableGrid=()=>{
+    let gridButtons=document.querySelectorAll(".gridChildren");
     for(let disableButton of gridButtons){
         disableButton.disabled=true;
     }
