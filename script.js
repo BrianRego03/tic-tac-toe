@@ -100,3 +100,17 @@ let startButton=document.querySelector("#starterbutton");
 let dialogButton=document.querySelector('#formAlign')
 
 startButton.addEventListener('click',()=>{dialogButton.showModal();});
+
+let formSubmit=document.querySelector("form");
+
+formSubmit.addEventListener('submit',function(e){
+    e.preventDefault();
+    let wait=0;
+    playerx.name=formSubmit[0].value;
+    playery.name=formSubmit[1].value;
+    
+    wait=1;
+    if(wait=1)
+        dialogButton.close();
+
+})
