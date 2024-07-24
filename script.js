@@ -11,10 +11,10 @@ function player(name){
 }
 playerx=player();
 playery=player();
-playerx.name=prompt("Which player uses X?");
-playerx.signal="X";
-playery.name=prompt("Which player uses O?");
-playery.signal="O";
+// playerx.name=prompt("Which player uses X?");
+// playerx.signal="X";
+// playery.name=prompt("Which player uses O?");
+// playery.signal="O";
 
 
 function beginDecider() {
@@ -27,7 +27,7 @@ function beginDecider() {
             console.log(`${playery.name} goes first`);
         }
 }   
-beginDecider();     
+// beginDecider();     
 
 function startGame(){
     let count=0;
@@ -72,7 +72,7 @@ function startGame(){
         console.log('error');    
 }
 
-startGame();
+// startGame();
 
 function boardChecker(){
     const winnerArray=['012','345','678','036','147','258','048','246'];
