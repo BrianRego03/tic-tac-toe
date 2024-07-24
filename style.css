@@ -53,3 +53,19 @@
     padding: 20px;
     font-size: 34px;
 }
+
+#start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vw;
+}
+
+#start>button{
+    display: flex;
+    min-width: 30vw;
+    min-height: 15vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
