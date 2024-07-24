@@ -27,7 +27,7 @@ function beginDecider() {
             console.log(`${playery.name} goes first`);
         }
 }   
-// beginDecider();     
+beginDecider();     
 
 function startGame(){
     let count=0;
@@ -176,5 +176,22 @@ let initializeDisplay=()=>{
     }
     
 
+}
+
+
+let gridButtons=document.querySelectorAll(".gridChildren");
+
+for(let currentButton of gridButtons){
+    currentButton.addEventListener('click',()=>{
+        if(playerx.start>0){
+            currentButton.innerText=playerx.signal;
+            currentButton.classList.add("xButtonHighlight");
+        }
+        else{
+            currentButton.innerText=playery.signal;
+            currentButton.classList.add("yButtonHighlight");
+
+        }
+    })
 }
 
