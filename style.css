@@ -86,3 +86,7 @@ form{
     min-height: 60px;
 
 }
+
+.buttonlayout{
+    display: flex;
+}
