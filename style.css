@@ -72,4 +72,10 @@
 form{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.playerform{
+    display:flex ;
+    flex-direction: column;
 }
