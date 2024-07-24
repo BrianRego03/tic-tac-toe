@@ -47,6 +47,8 @@
     background-color: #89CC04;
     display: flex;
     justify-content: center;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
     padding: 20px;
     font-size: 34px;
