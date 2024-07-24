@@ -108,7 +108,8 @@ formSubmit.addEventListener('submit',function(e){
     let wait=0;
     playerx.name=formSubmit[0].value;
     playery.name=formSubmit[1].value;
-    
+
+    startSection();
     wait=1;
     if(wait=1)
         dialogButton.close();
@@ -148,5 +149,8 @@ let formButtonActivate=(function(){
     buttono2.addEventListener('click',()=>{xoCombo();});
 })();
 
-
+let clearStart=()=>{
+    const startSection=document.getElementById("start");
+    startSection.remove();
+};
 
