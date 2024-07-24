@@ -11,20 +11,17 @@ function player(name){
 }
 playerx=player();
 playery=player();
-// playerx.name=prompt("Which player uses X?");
-// playerx.signal="X";
-// playery.name=prompt("Which player uses O?");
-// playery.signal="O";
+
 
 
 function beginDecider() {
     if(Math.random()<0.5)
     {
         playerx.start=1;
-        console.log(`${playerx.name} goes first`);
+        
     }
     else {playery.start=1;
-            console.log(`${playery.name} goes first`);
+            
         }
 }   
 beginDecider();     
@@ -42,7 +39,7 @@ function startGame(gridPosition){
         playerx.start--;
         playery.start++;
         winner=boardChecker();
-        console.log(winner);
+        
         
     }
     else{
@@ -51,14 +48,14 @@ function startGame(gridPosition){
         playery.start--;
         playerx.start++;
         winner=boardChecker();
-        console.log(winner);
+        
         
 
     }
     count++;
         
     
-    // console.log(gameBoard);
+    
     if((count==9)&&(winner==0))
         {console.log("It's a tie");
             return;}
@@ -72,22 +69,22 @@ function startGame(gridPosition){
         return;  
 }
 
-// startGame();
+
 
 function boardChecker(){
     const winnerArray=['012','345','678','036','147','258','048','246'];
     
     
     for(let combo of winnerArray){
-        // console.log(this);
+        
         let splitArray=combo.split("");
-        console.log(splitArray);
+        
         if((gameBoard.marks[splitArray[0]]==gameBoard.marks[splitArray[1]])&&
         (gameBoard.marks[splitArray[1]]==gameBoard.marks[splitArray[2]]))
         {
             console.log(`we have a winner ${gameBoard.marks[splitArray[0]]} at
                  ${splitArray[0]}${splitArray[1]}${splitArray[2]}`);
-            // console.log(gameBoard.marks[splitArray[0]]);     
+            
             return gameBoard.marks[splitArray[0]];      
         }
         
@@ -187,15 +184,13 @@ for(let currentButton of gridButtons){
         if(playerx.start>0){
             currentButton.innerText=playerx.signal;
             currentButton.classList.add("xButtonHighlight");
-            console.log(currentButton);
-            console.dir(currentButton);
+            
             startGame(location);
         }
         else{
             currentButton.innerText=playery.signal;
             currentButton.classList.add("yButtonHighlight");
-            console.log(currentButton);
-            console.dir(currentButton);
+            
             startGame(location);
 
         }
