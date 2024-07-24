@@ -165,6 +165,7 @@ let clearStart=()=>{
     const startSection=document.getElementById("start");
     startSection.remove();
     initializeDisplay();
+    gridGenerate();
 };
 
 let titleDiv=document.getElementById("title");
@@ -216,4 +217,26 @@ let displayWinner=(thread)=>{
 
     let displayScreen=document.getElementById("displayInfo");
     displayScreen.innerText=thread;
+    };
+
+let gridGenerate=()=>{
+    let gridDiv=document.createElement("div");
+    document.body.appendChild(gridDiv);
+    gridDiv.setAttribute("id","gridContainment");
+    let gridContain=document.createElement("div");
+    gridDiv.appendChild(gridContain);
+    gridContain.setAttribute("id","tictacGrid");
+    
+    let gridNumber=0;
+    while(gridNumber<9)
+    {   let gridChild=document.createElement("button");
+        
+        gridContain.appendChild(gridChild);
+        gridChild.setAttribute("id",`grid${gridNumber}`);
+        gridChild.setAttribute("class","gridChildren");
+        gridNumber++;
+        
     }
+}    
+
+
