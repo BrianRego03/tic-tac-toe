@@ -110,6 +110,7 @@ formSubmit.addEventListener('submit',function(e){
     playery.name=formSubmit[3].value;
 
     clearStart();
+    initializeDisplay();
     wait=1;
     if(wait=1)
         dialogButton.close();
@@ -145,7 +146,7 @@ let formButtonActivate=(function(){
     }
 
     xoCombo();
-    
+
     buttonx1.addEventListener('click',()=>{xoCombo();});
     buttono1.addEventListener('click',()=>{oxCombo();});
     buttonx2.addEventListener('click',()=>{oxCombo();});
@@ -156,4 +157,19 @@ let clearStart=()=>{
     const startSection=document.getElementById("start");
     startSection.remove();
 };
+
+let displayScreen=document.getElementById("displayInfo");
+let initializeDisplay=()=>{
+    let displayDiv=document.createElement("div");
+    document.body.appendChild(displayDiv).setAttribute("id","displayInfo");
+    if(playerx.start>0){
+    displayScreen.innerText=`${playerx.name} starts first`;
+    }
+    else{
+        displayScreen.innerText=`${playery.name} starts first`;
+
+    }
+    
+
+}
 
