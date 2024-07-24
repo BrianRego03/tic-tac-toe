@@ -78,15 +78,21 @@ form{
 .playerform{
     display:flex ;
     flex-direction: column;
-    margin-right: 30px;
+    margin-right: 50px;
 }
-.playerform>div>button{
+.buttonlayout>button{
     display: flex;
-    min-width: 60px ;
-    min-height: 60px;
+    min-width: 120px ;
+    min-height: 120px;
+    font-size: 48px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .buttonlayout{
     display: flex;
+    justify-content: center;
+    min-width: 120px;
 }
