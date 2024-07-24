@@ -57,13 +57,19 @@ function startGame(gridPosition){
     
     
     if((count==9)&&(winner==0))
-        {console.log("It's a tie");
+        {
+            console.log("It's a tie");
+            disableGrid();
             return;}
     else if(winner=="X")
-        {console.log(`${playerx.name} wins`);
-         return;}
+        {
+            console.log(`${playerx.name} wins`);
+            disableGrid();
+            return;}
     else if(winner=='O')
-        {console.log(`${playery.name} wins`);
+        {
+            console.log(`${playery.name} wins`);
+            disableGrid();
             return;}
     else
         return;  
@@ -194,6 +200,13 @@ for(let currentButton of gridButtons){
             startGame(location);
 
         }
+        currentButton.disabled=true;
     })
 }
+
+let disableGrid=()=>{
+    for(let disableButton of gridButtons){
+        disableButton.disabled=true;
+    }
+};
 
