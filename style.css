@@ -69,3 +69,7 @@
     align-items: center;
     font-size: 50px;
 }
+form{
+    display: flex;
+    justify-content: center;
+}
