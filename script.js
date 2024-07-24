@@ -29,7 +29,7 @@ function beginDecider() {
 }   
 beginDecider();     
 
-function startGame(){
+function startGame(gridPosition){
     let count=0;
     let winner=0;
     while(count<9)
@@ -183,13 +183,20 @@ let gridButtons=document.querySelectorAll(".gridChildren");
 
 for(let currentButton of gridButtons){
     currentButton.addEventListener('click',()=>{
+        let location=currentButton.id.slice(3);
         if(playerx.start>0){
             currentButton.innerText=playerx.signal;
             currentButton.classList.add("xButtonHighlight");
+            console.log(currentButton);
+            console.dir(currentButton);
+            startGame(location);
         }
         else{
             currentButton.innerText=playery.signal;
             currentButton.classList.add("yButtonHighlight");
+            console.log(currentButton);
+            console.dir(currentButton);
+            startGame(location);
 
         }
     })
