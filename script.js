@@ -94,3 +94,9 @@ function boardChecker(){
     }
     return 0;
 }
+
+
+let startButton=document.querySelector("#starterbutton");
+let dialogButton=document.querySelector('#formAlign')
+
+startButton.addEventListener('click',()=>{dialogButton.showModal();});
