@@ -143,6 +143,9 @@ let formButtonActivate=(function(){
         playerx.signal="O";
 
     }
+
+    xoCombo();
+    
     buttonx1.addEventListener('click',()=>{xoCombo();});
     buttono1.addEventListener('click',()=>{oxCombo();});
     buttonx2.addEventListener('click',()=>{oxCombo();});
