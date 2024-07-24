@@ -112,3 +112,18 @@ form{
     justify-content: center;
     min-width: 120px;
 }
+
+.xButtonHighlight{
+  background-color: red;
+  color: black;
+}
+
+.yButtonHighlight{
+  background-color: black;
+  color:white;
+}
+
+.greyedOut{
+  background-color: rgb(221, 221, 221);
+  color: rgb(78, 78, 78);
+}
