@@ -61,6 +61,7 @@ function startGame(gridPosition){
             console.log("It's a tie");
             disableGrid();
             displayWinner(`It's a tie`);
+            clearGameBoard();
             return;}
     else if(winner=="X")
         {
@@ -244,4 +245,11 @@ let gridGenerate=()=>{
     }
 }    
 
+let clearGameBoard=()=>{
+    let displayDiv=document.querySelector("#displayInfo");
+    let gridDiv=document.querySelector("#gridContainment");
+    document.body.removeChild(displayDiv);
+    document.body.removeChild(gridDiv);
+
+}
 
