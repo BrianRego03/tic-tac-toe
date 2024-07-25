@@ -94,7 +94,7 @@ let startpageLoad=()=>{
     
             const clearStart= (function(){
                 const startSection=document.getElementById("start");
-                startSection.remove();
+                document.body.removeChild(startSection);
                 
                 const initializeDisplay=(function(){
                     let displayDiv=document.createElement("div");
