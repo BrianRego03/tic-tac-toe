@@ -93,7 +93,7 @@ let startpageLoad=()=>{
             playery.name=formSubmit[3].value;
     
             const clearStart= (function(){
-                const startSection=document.getElementById("start");
+                let startSection=document.getElementById("start");
                 document.body.removeChild(startSection);
                 
                 const initializeDisplay=(function(){
