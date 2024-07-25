@@ -272,21 +272,20 @@ let resetGenerate=()=>{
     resetButton.setAttribute("id","resetStyling");
     resetButton.innerText="Reset";
     resetButton.addEventListener('click',()=>{
-        reset();
+        const reset=(function(){
+            playerx=player();
+            playery=player();
+            const clearGameBoard=(function(){
+                let displayDiv=document.querySelector("#displayInfo");
+                let gridDiv=document.querySelector("#gridContainment");
+                let resetButton=document.querySelector("#resetStyling");
+                document.body.removeChild(displayDiv);
+                document.body.removeChild(gridDiv);
+                document.body.removeChild(resetButton);
+            
+            })();
+        })();
         startpageLoad();
     })
 }
 
-let reset=()=>{
-    playerx=player();
-    playery=player();
-    const clearGameBoard=(function(){
-        let displayDiv=document.querySelector("#displayInfo");
-        let gridDiv=document.querySelector("#gridContainment");
-        let resetButton=document.querySelector("#resetStyling");
-        document.body.removeChild(displayDiv);
-        document.body.removeChild(gridDiv);
-        document.body.removeChild(resetButton);
-    
-    })();
-}
