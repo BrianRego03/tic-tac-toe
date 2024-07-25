@@ -67,6 +67,21 @@ function startGame(gridPosition){
     }
     count++;
         
+
+    let disableGrid=()=>{
+        let gridButtons=document.querySelectorAll(".gridChildren");
+        for(let disableButton of gridButtons){
+            disableButton.disabled=true;
+        }
+    };
+    
+    let displayWinner=(thread)=>{
+    
+        let displayScreen=document.getElementById("displayInfo");
+        displayScreen.innerText=thread;
+        };
+    
+    
     
     
     if((count==9)&&(winner==0))
@@ -175,19 +190,6 @@ let clearStart=()=>{
 
 
 
-
-let disableGrid=()=>{
-    let gridButtons=document.querySelectorAll(".gridChildren");
-    for(let disableButton of gridButtons){
-        disableButton.disabled=true;
-    }
-};
-
-let displayWinner=(thread)=>{
-
-    let displayScreen=document.getElementById("displayInfo");
-    displayScreen.innerText=thread;
-    };
 
 
 
