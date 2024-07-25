@@ -9,15 +9,15 @@ function player(name){
 
         return{name,signal:null,start:0,getScore,matchWon};
 }
-playerx=player();
-playery=player();
+// playerx=player();
+// playery=player();
 
 
 
 
     
 
-let count=0;
+let count;
 function startGame(gridPosition){
     
     let winner=0;
@@ -193,6 +193,13 @@ let displayWinner=(thread)=>{
 
 
 let startpageLoad=()=>{
+    playerx=player();
+    playery=player();
+    count=0;
+    gameBoard ={
+        marks:['a','b','c','d','e','f','g','h','i']
+    };
+
 
     const beginDecider=(function(){
         if(Math.random()<0.5)
