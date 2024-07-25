@@ -249,19 +249,19 @@ let gridGenerate=()=>{
 
 
 
-let loadPage=()=>{
-    let starterDiv=document.createElement("div");
-    document.body.appendChild(starterDiv);
-    starterDiv.setAttribute("id","start");
-    let startButtonDiv=document.createElement("button");
-    starterDiv.appendChild(startButtonDiv);
-    startButtonDiv.setAttribute("id","starterbutton");
-    startButtonDiv.innerHTML="START GAME";
 
-}
 
 let startpageLoad=()=>{
-    loadPage();
+    const loadPage=(function(){
+        let starterDiv=document.createElement("div");
+        document.body.appendChild(starterDiv);
+        starterDiv.setAttribute("id","start");
+        let startButtonDiv=document.createElement("button");
+        starterDiv.appendChild(startButtonDiv);
+        startButtonDiv.setAttribute("id","starterbutton");
+        startButtonDiv.innerHTML="START GAME";
+    
+    })();
     startActivate();
 }
 startpageLoad();
