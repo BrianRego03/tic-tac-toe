@@ -139,6 +139,7 @@ form{
   
   
   font-size: 34px;
+  margin:40px;
 
 }
 
@@ -149,6 +150,7 @@ form{
   width: 300px;
   height: 300px;
   justify-content: center;
+  background-color: white;
   
 }
 
