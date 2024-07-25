@@ -22,6 +22,28 @@ function startGame(gridPosition){
     
     let winner=0;
     console.log(gridPosition);
+
+    function boardChecker(){
+        const winnerArray=['012','345','678','036','147','258','048','246'];
+        
+        
+        for(let combo of winnerArray){
+            
+            let splitArray=combo.split("");
+            
+            if((gameBoard.marks[splitArray[0]]==gameBoard.marks[splitArray[1]])&&
+            (gameBoard.marks[splitArray[1]]==gameBoard.marks[splitArray[2]]))
+            {
+                console.log(`we have a winner ${gameBoard.marks[splitArray[0]]} at
+                     ${splitArray[0]}${splitArray[1]}${splitArray[2]}`);
+                
+                return gameBoard.marks[splitArray[0]];      
+            }
+            
+        }
+        return 0;
+    }
+    
     
     if(playerx.start==1)
     {
@@ -71,26 +93,6 @@ function startGame(gridPosition){
 
 
 
-function boardChecker(){
-    const winnerArray=['012','345','678','036','147','258','048','246'];
-    
-    
-    for(let combo of winnerArray){
-        
-        let splitArray=combo.split("");
-        
-        if((gameBoard.marks[splitArray[0]]==gameBoard.marks[splitArray[1]])&&
-        (gameBoard.marks[splitArray[1]]==gameBoard.marks[splitArray[2]]))
-        {
-            console.log(`we have a winner ${gameBoard.marks[splitArray[0]]} at
-                 ${splitArray[0]}${splitArray[1]}${splitArray[2]}`);
-            
-            return gameBoard.marks[splitArray[0]];      
-        }
-        
-    }
-    return 0;
-}
 
 
 
