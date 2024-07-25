@@ -1,13 +1,4 @@
 
-let count;
-
-
-
-
-
-
-
-
 let startpageLoad=()=>{
 
     let gameBoard ={
@@ -24,7 +15,7 @@ let startpageLoad=()=>{
 
     playerx=player();
     playery=player();
-    count=0;
+    let count;
     
 
 
@@ -148,6 +139,7 @@ let startpageLoad=()=>{
                     gameBoard ={
                         marks:['a','b','c','d','e','f','g','h','i']
                     };
+                    count=0;
                     for(let currentButton of gridButtons){
                         currentButton.addEventListener('click',()=>{
 
