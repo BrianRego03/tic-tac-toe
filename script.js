@@ -1,15 +1,3 @@
-let gameBoard ={
-    marks:['a','b','c','d','e','f','g','h','i']
-};
-
-
-// playerx=player();
-// playery=player();
-
-
-
-
-    
 
 let count;
 
@@ -22,6 +10,10 @@ let count;
 
 let startpageLoad=()=>{
 
+    let gameBoard ={
+        marks:['a','b','c','d','e','f','g','h','i']
+    };
+
     function player(name){
         let score=0;
         const getScore=()=>score;
@@ -29,13 +21,11 @@ let startpageLoad=()=>{
     
             return{name,signal:null,start:0,getScore,matchWon};
     }
-    
+
     playerx=player();
     playery=player();
     count=0;
-    gameBoard ={
-        marks:['a','b','c','d','e','f','g','h','i']
-    };
+    
 
 
     const beginDecider=(function(){
@@ -155,6 +145,9 @@ let startpageLoad=()=>{
             
                 const gridActivator=(function(){
                     let gridButtons=document.querySelectorAll(".gridChildren");
+                    gameBoard ={
+                        marks:['a','b','c','d','e','f','g','h','i']
+                    };
                     for(let currentButton of gridButtons){
                         currentButton.addEventListener('click',()=>{
 
