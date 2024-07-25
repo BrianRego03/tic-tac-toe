@@ -41,7 +41,9 @@
   #root, #__next {
     isolation: isolate;
   }
-
+body{
+  background-color: #89CC04;
+}
 
 #title{
     background-color: #89CC04;
