@@ -261,7 +261,10 @@ let startpageLoad=()=>{
             
                 const resetGenerate=(function(){
                     let resetButton=document.createElement("button");
-                    document.body.appendChild(resetButton);
+                    let resetDiv=document.createElement("div");
+                    document.body.appendChild(resetDiv);
+                    resetDiv.appendChild(resetButton);
+                    resetDiv.setAttribute("id","resetAlign");
                     resetButton.setAttribute("id","resetStyling");
                     resetButton.innerText="Reset";
                     resetButton.addEventListener('click',()=>{
@@ -271,7 +274,7 @@ let startpageLoad=()=>{
                             const clearGameBoard=(function(){
                                 let displayDiv=document.querySelector("#displayInfo");
                                 let gridDiv=document.querySelector("#gridContainment");
-                                let resetButton=document.querySelector("#resetStyling");
+                                let resetButton=document.querySelector("#resetAlign");
                                 document.body.removeChild(displayDiv);
                                 document.body.removeChild(gridDiv);
                                 document.body.removeChild(resetButton);
