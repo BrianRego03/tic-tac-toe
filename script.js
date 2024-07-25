@@ -102,30 +102,7 @@ function boardChecker(){
 }
 
 
-startActivate=()=>{
-    let startButton=document.querySelector("#starterbutton");
-    let dialogButton=document.querySelector('#formAlign')
 
-    startButton.addEventListener('click',()=>{dialogButton.showModal();});
-
-    let formSubmit=document.querySelector("form");
-
-    formSubmit.addEventListener('submit',function(e){
-        e.preventDefault();
-        let wait=0;
-        playerx.name=formSubmit[0].value;
-        playery.name=formSubmit[3].value;
-
-        clearStart();
-        
-        wait=1;
-        if(wait=1)
-            dialogButton.close();
-
-    
-
-})
-}
 
 let formButtonActivate=(function(){
     let buttonx1=document.querySelector("#player1X");
@@ -262,7 +239,32 @@ let startpageLoad=()=>{
         startButtonDiv.innerHTML="START GAME";
     
     })();
-    startActivate();
+    
+    
+    const startActivate=(function(){
+        let startButton=document.querySelector("#starterbutton");
+        let dialogButton=document.querySelector('#formAlign')
+    
+        startButton.addEventListener('click',()=>{dialogButton.showModal();});
+    
+        let formSubmit=document.querySelector("form");
+    
+        formSubmit.addEventListener('submit',function(e){
+            e.preventDefault();
+            let wait=0;
+            playerx.name=formSubmit[0].value;
+            playery.name=formSubmit[3].value;
+    
+            clearStart();
+            
+            wait=1;
+            if(wait=1)
+                dialogButton.close();
+    
+        
+    
+    })
+    })();
 }
 startpageLoad();
 
