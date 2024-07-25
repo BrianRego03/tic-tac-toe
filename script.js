@@ -1,4 +1,6 @@
-
+let gameBoard ={
+    marks:['a','b','c','d','e','f','g','h','i']
+};
 
 function player(name){
     let score=0;
@@ -28,7 +30,7 @@ let startpageLoad=()=>{
     playerx=player();
     playery=player();
     count=0;
-    let gameBoard ={
+    gameBoard ={
         marks:['a','b','c','d','e','f','g','h','i']
     };
 
