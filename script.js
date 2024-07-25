@@ -14,17 +14,8 @@ playery=player();
 
 
 
-function beginDecider() {
-    if(Math.random()<0.5)
-    {
-        playerx.start=1;
-        
-    }
-    else {playery.start=1;
-            
-        }
-}   
-beginDecider();     
+
+    
 
 let count=0;
 function startGame(gridPosition){
@@ -236,6 +227,19 @@ let displayWinner=(thread)=>{
 
 
 let startpageLoad=()=>{
+
+    const beginDecider=(function(){
+        if(Math.random()<0.5)
+        {
+            playerx.start=1;
+            
+        }
+        else {playery.start=1;
+                
+            }
+    })();   
+    
+
     const loadPage=(function(){
         let starterDiv=document.createElement("div");
         document.body.appendChild(starterDiv);
