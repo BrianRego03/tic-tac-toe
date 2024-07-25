@@ -246,13 +246,7 @@ let gridGenerate=()=>{
     }
 }    
 
-let clearGameBoard=()=>{
-    let displayDiv=document.querySelector("#displayInfo");
-    let gridDiv=document.querySelector("#gridContainment");
-    document.body.removeChild(displayDiv);
-    document.body.removeChild(gridDiv);
 
-}
 
 let loadPage=()=>{
     let starterDiv=document.createElement("div");
@@ -276,4 +270,16 @@ let resetGenerate=()=>{
     document.body.appendChild(resetButton);
     resetButton.setAttribute("id","resetStyling");
     resetButton.innerText="Reset";
+}
+
+let reset=()=>{
+    playerx=player();
+    playery=player();
+    const clearGameBoard=(function(){
+        let displayDiv=document.querySelector("#displayInfo");
+        let gridDiv=document.querySelector("#gridContainment");
+        document.body.removeChild(displayDiv);
+        document.body.removeChild(gridDiv);
+    
+    })();
 }
