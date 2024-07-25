@@ -95,41 +95,7 @@ function boardChecker(){
 
 
 
-let formButtonActivate=(function(){
-    let buttonx1=document.querySelector("#player1X");
-    let buttono1=document.querySelector("#player1O");
-    let buttonx2=document.querySelector("#player2X");
-    let buttono2=document.querySelector("#player2O");
 
-    let xoCombo=()=>{
-        buttonx1.setAttribute("class","xButtonHighlight");
-        buttono1.setAttribute("class","greyedOut");
-        buttonx2.setAttribute("class","greyedOut");
-        buttono2.setAttribute("class","yButtonHighlight");
-
-        playerx.signal="X";
-        playery.signal="O";
-        
-    };
-
-    let oxCombo=()=>{
-        buttonx1.setAttribute("class","greyedOut");
-        buttono1.setAttribute("class","xButtonHighlight");
-        buttonx2.setAttribute("class","yButtonHighlight");
-        buttono2.setAttribute("class","greyedOut");
-
-        playery.signal="X";
-        playerx.signal="O";
-
-    }
-
-    xoCombo();
-
-    buttonx1.addEventListener('click',()=>{xoCombo();});
-    buttono1.addEventListener('click',()=>{oxCombo();});
-    buttonx2.addEventListener('click',()=>{oxCombo();});
-    buttono2.addEventListener('click',()=>{xoCombo();});
-})();
 
 let clearStart=()=>{
     const startSection=document.getElementById("start");
@@ -251,6 +217,41 @@ let startpageLoad=()=>{
     
     })();
     
+    const formButtonActivate=(function(){
+        let buttonx1=document.querySelector("#player1X");
+        let buttono1=document.querySelector("#player1O");
+        let buttonx2=document.querySelector("#player2X");
+        let buttono2=document.querySelector("#player2O");
+    
+        let xoCombo=()=>{
+            buttonx1.setAttribute("class","xButtonHighlight");
+            buttono1.setAttribute("class","greyedOut");
+            buttonx2.setAttribute("class","greyedOut");
+            buttono2.setAttribute("class","yButtonHighlight");
+    
+            playerx.signal="X";
+            playery.signal="O";
+            
+        };
+    
+        let oxCombo=()=>{
+            buttonx1.setAttribute("class","greyedOut");
+            buttono1.setAttribute("class","xButtonHighlight");
+            buttonx2.setAttribute("class","yButtonHighlight");
+            buttono2.setAttribute("class","greyedOut");
+    
+            playery.signal="X";
+            playerx.signal="O";
+    
+        }
+    
+        xoCombo();
+    
+        buttonx1.addEventListener('click',()=>{xoCombo();});
+        buttono1.addEventListener('click',()=>{oxCombo();});
+        buttonx2.addEventListener('click',()=>{oxCombo();});
+        buttono2.addEventListener('click',()=>{xoCombo();});
+    })();
     
     const startActivate=(function(){
         let startButton=document.querySelector("#starterbutton");
