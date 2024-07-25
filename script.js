@@ -253,3 +253,9 @@ let clearGameBoard=()=>{
 
 }
 
+let loadPage=(){
+    let startButtonDiv=document.createElement("div");
+    document.body.appendChild(startButtonDiv);
+    startButtonDiv.setAttribute("id","starterbutton");
+
+}
