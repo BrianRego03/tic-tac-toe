@@ -180,7 +180,29 @@ let clearStart=()=>{
     })();
 
 
-    resetGenerate();
+    const resetGenerate=(function(){
+        let resetButton=document.createElement("button");
+        document.body.appendChild(resetButton);
+        resetButton.setAttribute("id","resetStyling");
+        resetButton.innerText="Reset";
+        resetButton.addEventListener('click',()=>{
+            const reset=(function(){
+                playerx=player();
+                playery=player();
+                const clearGameBoard=(function(){
+                    let displayDiv=document.querySelector("#displayInfo");
+                    let gridDiv=document.querySelector("#gridContainment");
+                    let resetButton=document.querySelector("#resetStyling");
+                    document.body.removeChild(displayDiv);
+                    document.body.removeChild(gridDiv);
+                    document.body.removeChild(resetButton);
+                
+                })();
+            })();
+            startpageLoad();
+        })
+    })();
+    
 };
 
 
@@ -291,26 +313,4 @@ let startpageLoad=()=>{
 }
 startpageLoad();
 
-let resetGenerate=()=>{
-    let resetButton=document.createElement("button");
-    document.body.appendChild(resetButton);
-    resetButton.setAttribute("id","resetStyling");
-    resetButton.innerText="Reset";
-    resetButton.addEventListener('click',()=>{
-        const reset=(function(){
-            playerx=player();
-            playery=player();
-            const clearGameBoard=(function(){
-                let displayDiv=document.querySelector("#displayInfo");
-                let gridDiv=document.querySelector("#gridContainment");
-                let resetButton=document.querySelector("#resetStyling");
-                document.body.removeChild(displayDiv);
-                document.body.removeChild(gridDiv);
-                document.body.removeChild(resetButton);
-            
-            })();
-        })();
-        startpageLoad();
-    })
-}
 
