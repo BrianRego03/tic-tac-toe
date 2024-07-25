@@ -275,4 +275,5 @@ let resetGenerate=()=>{
     let resetButton=document.createElement("button");
     document.body.appendChild(resetButton);
     resetButton.setAttribute("id","resetStyling");
+    resetButton.innerText="Reset";
 }
