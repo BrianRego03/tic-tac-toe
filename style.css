@@ -173,3 +173,8 @@ form{
   font-size: 24px;
   margin: 35px;
 }
+
+#resetAlign{
+  display: flex;
+  justify-content: center;
+}
