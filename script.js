@@ -18,109 +18,6 @@ function player(name){
     
 
 let count;
-function startGame(gridPosition){
-    
-    let winner=0;
-    console.log(gridPosition);
-
-    function boardChecker(){
-        const winnerArray=['012','345','678','036','147','258','048','246'];
-        
-        
-        for(let combo of winnerArray){
-            
-            let splitArray=combo.split("");
-            
-            if((gameBoard.marks[splitArray[0]]==gameBoard.marks[splitArray[1]])&&
-            (gameBoard.marks[splitArray[1]]==gameBoard.marks[splitArray[2]]))
-            {
-                console.log(`we have a winner ${gameBoard.marks[splitArray[0]]} at
-                     ${splitArray[0]}${splitArray[1]}${splitArray[2]}`);
-                
-                return gameBoard.marks[splitArray[0]];      
-            }
-            
-        }
-        return 0;
-    }
-    
-    
-    if(playerx.start==1)
-    {
-        
-        gameBoard.marks[gridPosition]=playerx.signal;
-        playerx.start--;
-        playery.start++;
-        winner=boardChecker();
-        
-        
-    }
-    else{
-        
-        gameBoard.marks[gridPosition]=playery.signal;
-        playery.start--;
-        playerx.start++;
-        winner=boardChecker();
-        
-        
-
-    }
-    count++;
-        
-
-    let disableGrid=()=>{
-        let gridButtons=document.querySelectorAll(".gridChildren");
-        for(let disableButton of gridButtons){
-            disableButton.disabled=true;
-        }
-    };
-    
-    let displayWinner=(thread)=>{
-    
-        let displayScreen=document.getElementById("displayInfo");
-        displayScreen.innerText=thread;
-        };
-    
-    
-    
-    
-    if((count==9)&&(winner==0))
-        {
-            console.log("It's a tie");
-            disableGrid();
-            displayWinner(`It's a tie`);
-            return;}
-    else if(winner=="X")
-        {
-            console.log(`${playerx.name} wins`);
-            disableGrid();
-            displayWinner(`${playerx.name} wins`);
-            return;}
-    else if(winner=='O')
-        {
-            console.log(`${playery.name} wins`);
-            disableGrid();
-            displayWinner(`${playery.name} wins`);
-            return;}
-    else
-        return;  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -257,6 +154,103 @@ let startpageLoad=()=>{
                     let gridButtons=document.querySelectorAll(".gridChildren");
                     for(let currentButton of gridButtons){
                         currentButton.addEventListener('click',()=>{
+
+                            function startGame(gridPosition){
+    
+                                let winner=0;
+                                console.log(gridPosition);
+                            
+                                function boardChecker(){
+                                    const winnerArray=['012','345','678','036','147','258',
+                                        '048','246'];
+                                    
+                                    
+                                    for(let combo of winnerArray){
+                                        
+                                        let splitArray=combo.split("");
+                                        
+                                        if((gameBoard.marks[splitArray[0]]==
+                                            gameBoard.marks[splitArray[1]])&&
+                                        (gameBoard.marks[splitArray[1]]==
+                                            gameBoard.marks[splitArray[2]]))
+                                        {
+                                            
+                                            
+                                            return gameBoard.marks[splitArray[0]];      
+                                        }
+                                        
+                                    }
+                                    return 0;
+                                }
+                                
+                                
+                                if(playerx.start==1)
+                                {
+                                    
+                                    gameBoard.marks[gridPosition]=playerx.signal;
+                                    playerx.start--;
+                                    playery.start++;
+                                    winner=boardChecker();
+                                    
+                                    
+                                }
+                                else{
+                                    
+                                    gameBoard.marks[gridPosition]=playery.signal;
+                                    playery.start--;
+                                    playerx.start++;
+                                    winner=boardChecker();
+                                    
+                                    
+                            
+                                }
+                                count++;
+                                    
+                            
+                                let disableGrid=()=>{
+                                    let gridButtons=document.querySelectorAll(".gridChildren");
+                                    for(let disableButton of gridButtons){
+                                        disableButton.disabled=true;
+                                    }
+                                };
+                                
+                                let displayWinner=(thread)=>{
+                                
+                                    let displayScreen=document.getElementById("displayInfo");
+                                    displayScreen.innerText=thread;
+                                    };
+                                
+                                
+                                
+                                
+                                if((count==9)&&(winner==0))
+                                    {
+                                        console.log("It's a tie");
+                                        disableGrid();
+                                        displayWinner(`It's a tie`);
+                                        return;}
+                                else if(winner=="X")
+                                    {
+                                        console.log(`${playerx.name} wins`);
+                                        disableGrid();
+                                        displayWinner(`${playerx.name} wins`);
+                                        return;}
+                                else if(winner=='O')
+                                    {
+                                        console.log(`${playery.name} wins`);
+                                        disableGrid();
+                                        displayWinner(`${playery.name} wins`);
+                                        return;}
+                                else
+                                    return;  
+                            }
+                            
+                            
+
+
+                            
+
+
                             let location=currentButton.id.slice(4);
                             if(playerx.start>0){
                                 currentButton.innerText=playerx.signal;
