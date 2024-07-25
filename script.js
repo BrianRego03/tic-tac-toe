@@ -114,96 +114,7 @@ function startGame(gridPosition){
 
 
 
-let clearStart=()=>{
-    const startSection=document.getElementById("start");
-    startSection.remove();
-    
-    const initializeDisplay=(function(){
-        let displayDiv=document.createElement("div");
-        let titleDiv=document.getElementById("title");
-        titleDiv.insertAdjacentElement('afterend',displayDiv);
-        displayDiv.setAttribute("id","displayInfo");
-        if(playerx.start>0){
-            displayDiv.innerText=`${playerx.name} starts first`;
-        }
-        else{
-            displayDiv.innerText=`${playery.name} starts first`;
-    
-        }
-        
-    
-    })();
 
-    const gridGenerate=(function(){
-        let gridDiv=document.createElement("div");
-        document.body.appendChild(gridDiv);
-        gridDiv.setAttribute("id","gridContainment");
-        let gridContain=document.createElement("div");
-        gridDiv.appendChild(gridContain);
-        gridContain.setAttribute("id","tictacGrid");
-        
-        let gridNumber=0;
-        while(gridNumber<9)
-        {   let gridChild=document.createElement("button");
-            
-            gridContain.appendChild(gridChild);
-            gridChild.setAttribute("id",`grid${gridNumber}`);
-            gridChild.setAttribute("class","gridChildren");
-            gridNumber++;
-            
-        }
-    }  )();  
-    
-
-
-    const gridActivator=(function(){
-        let gridButtons=document.querySelectorAll(".gridChildren");
-        for(let currentButton of gridButtons){
-            currentButton.addEventListener('click',()=>{
-                let location=currentButton.id.slice(4);
-                if(playerx.start>0){
-                    currentButton.innerText=playerx.signal;
-                    currentButton.classList.add("xButtonHighlight");
-                    
-                    startGame(location);
-                }
-                else{
-                    currentButton.innerText=playery.signal;
-                    currentButton.classList.add("yButtonHighlight");
-                    
-                    startGame(location);
-        
-                }
-                currentButton.disabled=true;
-            })
-        }
-    })();
-
-
-    const resetGenerate=(function(){
-        let resetButton=document.createElement("button");
-        document.body.appendChild(resetButton);
-        resetButton.setAttribute("id","resetStyling");
-        resetButton.innerText="Reset";
-        resetButton.addEventListener('click',()=>{
-            const reset=(function(){
-                playerx=player();
-                playery=player();
-                const clearGameBoard=(function(){
-                    let displayDiv=document.querySelector("#displayInfo");
-                    let gridDiv=document.querySelector("#gridContainment");
-                    let resetButton=document.querySelector("#resetStyling");
-                    document.body.removeChild(displayDiv);
-                    document.body.removeChild(gridDiv);
-                    document.body.removeChild(resetButton);
-                
-                })();
-            })();
-            startpageLoad();
-        })
-    })();
-    
-};
 
 
 
@@ -300,7 +211,96 @@ let startpageLoad=()=>{
             playerx.name=formSubmit[0].value;
             playery.name=formSubmit[3].value;
     
-            clearStart();
+            const clearStart= (function(){
+                const startSection=document.getElementById("start");
+                startSection.remove();
+                
+                const initializeDisplay=(function(){
+                    let displayDiv=document.createElement("div");
+                    let titleDiv=document.getElementById("title");
+                    titleDiv.insertAdjacentElement('afterend',displayDiv);
+                    displayDiv.setAttribute("id","displayInfo");
+                    if(playerx.start>0){
+                        displayDiv.innerText=`${playerx.name} starts first`;
+                    }
+                    else{
+                        displayDiv.innerText=`${playery.name} starts first`;
+                
+                    }
+                    
+                
+                })();
+            
+                const gridGenerate=(function(){
+                    let gridDiv=document.createElement("div");
+                    document.body.appendChild(gridDiv);
+                    gridDiv.setAttribute("id","gridContainment");
+                    let gridContain=document.createElement("div");
+                    gridDiv.appendChild(gridContain);
+                    gridContain.setAttribute("id","tictacGrid");
+                    
+                    let gridNumber=0;
+                    while(gridNumber<9)
+                    {   let gridChild=document.createElement("button");
+                        
+                        gridContain.appendChild(gridChild);
+                        gridChild.setAttribute("id",`grid${gridNumber}`);
+                        gridChild.setAttribute("class","gridChildren");
+                        gridNumber++;
+                        
+                    }
+                }  )();  
+                
+            
+            
+                const gridActivator=(function(){
+                    let gridButtons=document.querySelectorAll(".gridChildren");
+                    for(let currentButton of gridButtons){
+                        currentButton.addEventListener('click',()=>{
+                            let location=currentButton.id.slice(4);
+                            if(playerx.start>0){
+                                currentButton.innerText=playerx.signal;
+                                currentButton.classList.add("xButtonHighlight");
+                                
+                                startGame(location);
+                            }
+                            else{
+                                currentButton.innerText=playery.signal;
+                                currentButton.classList.add("yButtonHighlight");
+                                
+                                startGame(location);
+                    
+                            }
+                            currentButton.disabled=true;
+                        })
+                    }
+                })();
+            
+            
+                const resetGenerate=(function(){
+                    let resetButton=document.createElement("button");
+                    document.body.appendChild(resetButton);
+                    resetButton.setAttribute("id","resetStyling");
+                    resetButton.innerText="Reset";
+                    resetButton.addEventListener('click',()=>{
+                        const reset=(function(){
+                            playerx=player();
+                            playery=player();
+                            const clearGameBoard=(function(){
+                                let displayDiv=document.querySelector("#displayInfo");
+                                let gridDiv=document.querySelector("#gridContainment");
+                                let resetButton=document.querySelector("#resetStyling");
+                                document.body.removeChild(displayDiv);
+                                document.body.removeChild(gridDiv);
+                                document.body.removeChild(resetButton);
+                            
+                            })();
+                        })();
+                        startpageLoad();
+                    })
+                })();
+                
+            })();
             
             wait=1;
             if(wait=1)
