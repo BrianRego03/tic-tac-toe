@@ -144,8 +144,8 @@ let formButtonActivate=(function(){
 
     let oxCombo=()=>{
         buttonx1.setAttribute("class","greyedOut");
-        buttono1.setAttribute("class","yButtonHighlight");
-        buttonx2.setAttribute("class","xButtonHighlight");
+        buttono1.setAttribute("class","xButtonHighlight");
+        buttonx2.setAttribute("class","yButtonHighlight");
         buttono2.setAttribute("class","greyedOut");
 
         playery.signal="X";
