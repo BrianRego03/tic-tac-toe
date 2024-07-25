@@ -143,27 +143,30 @@ let formButtonActivate=(function(){
 let clearStart=()=>{
     const startSection=document.getElementById("start");
     startSection.remove();
-    initializeDisplay();
+    
+    const initializeDisplay=(function(){
+        let displayDiv=document.createElement("div");
+        let titleDiv=document.getElementById("title");
+        titleDiv.insertAdjacentElement('afterend',displayDiv);
+        displayDiv.setAttribute("id","displayInfo");
+        if(playerx.start>0){
+            displayDiv.innerText=`${playerx.name} starts first`;
+        }
+        else{
+            displayDiv.innerText=`${playery.name} starts first`;
+    
+        }
+        
+    
+    })();
+
     gridGenerate();
     gridActivator();
     resetGenerate();
 };
 
-let titleDiv=document.getElementById("title");
-let initializeDisplay=()=>{
-    let displayDiv=document.createElement("div");
-    titleDiv.insertAdjacentElement('afterend',displayDiv);
-    displayDiv.setAttribute("id","displayInfo");
-    if(playerx.start>0){
-        displayDiv.innerText=`${playerx.name} starts first`;
-    }
-    else{
-        displayDiv.innerText=`${playery.name} starts first`;
 
-    }
-    
 
-}
 
 
 
