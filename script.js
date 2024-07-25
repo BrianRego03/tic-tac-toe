@@ -160,7 +160,28 @@ let clearStart=()=>{
     
     })();
 
-    gridGenerate();
+    const gridGenerate=(function(){
+        let gridDiv=document.createElement("div");
+        document.body.appendChild(gridDiv);
+        gridDiv.setAttribute("id","gridContainment");
+        let gridContain=document.createElement("div");
+        gridDiv.appendChild(gridContain);
+        gridContain.setAttribute("id","tictacGrid");
+        
+        let gridNumber=0;
+        while(gridNumber<9)
+        {   let gridChild=document.createElement("button");
+            
+            gridContain.appendChild(gridChild);
+            gridChild.setAttribute("id",`grid${gridNumber}`);
+            gridChild.setAttribute("class","gridChildren");
+            gridNumber++;
+            
+        }
+    }  )();  
+    
+
+
     gridActivator();
     resetGenerate();
 };
@@ -207,25 +228,6 @@ let displayWinner=(thread)=>{
     displayScreen.innerText=thread;
     };
 
-let gridGenerate=()=>{
-    let gridDiv=document.createElement("div");
-    document.body.appendChild(gridDiv);
-    gridDiv.setAttribute("id","gridContainment");
-    let gridContain=document.createElement("div");
-    gridDiv.appendChild(gridContain);
-    gridContain.setAttribute("id","tictacGrid");
-    
-    let gridNumber=0;
-    while(gridNumber<9)
-    {   let gridChild=document.createElement("button");
-        
-        gridContain.appendChild(gridChild);
-        gridChild.setAttribute("id",`grid${gridNumber}`);
-        gridChild.setAttribute("class","gridChildren");
-        gridNumber++;
-        
-    }
-}    
 
 
 
